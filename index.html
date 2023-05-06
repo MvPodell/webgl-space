@@ -55,15 +55,15 @@
 
   <!-- <canvas width="500" height="500" id="webgl-canvas"></canvas> -->
 
-  <script src="../common/webgl-debug.js"></script>
-  <script src="../common/math.js"></script>
-  <script src="../common/gl-utils.js"></script>
-  <script src="../common/input.js"></script>
-  <script src="../common/renderloop.js"></script>
-  <script src="../common/camera.js"></script>
-  <script src="../common/grid.js"></script>
-  <script src="../common/dat.gui.min.js"></script>
-  <script src="../common/stats.min.js"></script>
+  <script src="/common/webgl-debug.js"></script>
+  <script src="/common/math.js"></script>
+  <script src="/common/gl-utils.js"></script>
+  <script src="/common/input.js"></script>
+  <script src="/common/renderloop.js"></script>
+  <script src="/common/camera.js"></script>
+  <script src="/common/grid.js"></script>
+  <script src="/common/dat.gui.min.js"></script>
+  <script src="/common/stats.min.js"></script>
 
   <script src="renderer.js"></script>
   <script src="modeltransform.js"></script>
@@ -156,16 +156,16 @@
       // get the start time
       then = 0;
 
-      //TODO: load texture from ressources folder to TextureCache
-      GLUtils.loadTexture("uv-test", "ressources/uv-test.png");
-      GLUtils.loadTexture("uv-bunny", "ressources/ChocolateBunny/bunny.jpg");
-      GLUtils.loadTexture("grass", "ressources/grass.jpeg");
-      GLUtils.loadTexture("tent", "ressources/t1.png");
-      GLUtils.loadTexture("tent1", "ressources/withbase2.png");
-      GLUtils.loadTexture("fire", "ressources/fire2tex.png");
-      GLUtils.loadTexture("campfire", "ressources/campfire.png");
-      GLUtils.loadTexture("ufo", "ressources/ufo1.png");
-      GLUtils.loadTexture("rock", "ressources/rock.png");
+      //TODO: load texture from resources folder to TextureCache
+      GLUtils.loadTexture("uv-test", "resources/uv-test.png");
+      GLUtils.loadTexture("uv-bunny", "resources/ChocolateBunny/bunny.jpg");
+      GLUtils.loadTexture("grass", "resources/grass.jpeg");
+      GLUtils.loadTexture("tent", "resources/t1.png");
+      GLUtils.loadTexture("tent1", "resources/withbase2.png");
+      GLUtils.loadTexture("fire", "resources/fire2tex.png");
+      GLUtils.loadTexture("campfire", "resources/campfire.png");
+      GLUtils.loadTexture("ufo", "resources/ufo1.png");
+      GLUtils.loadTexture("rock", "resources/rock.png");
       GLUtils.loadCubeMap("cubeMap",
         'blue/bkg1_right.png', 'blue/bkg1_left.png',
         'blue/bkg1_top.png', 'blue/bkg1_bot.png',
@@ -186,7 +186,7 @@
       let rockMat = {tint: new V3(2,2,2), mainTexture: "rock", cubeMap: "cubeMap", shininess: 1};
 
       // bunny 
-      let bunnyMesh = OBJLoader.getMesh("bunnyMesh", "ressources/ChocolateBunny/bunny.obj");
+      let bunnyMesh = OBJLoader.getMesh("bunnyMesh", "resources/ChocolateBunny/bunny.obj");
       bunny = new ModelTransform(bunnyMesh, bunnyMat);
       bunny.scale.set(0.3, 0.3, 0.3);
       bunny.position.set(1.0, -0.5, 0.5);
@@ -199,35 +199,35 @@
       // quad.scale.set(6, 4, 4);
 
       // tent
-      let tentMesh = OBJLoader.getMesh("tentMesh", "ressources/tent1.obj");
+      let tentMesh = OBJLoader.getMesh("tentMesh", "resources/tent1.obj");
       tent1 = new ModelTransform(tentMesh, tentMat);
       tent1.scale.set(0.009, 0.009, 0.009);
       tent1.position.set(-0.8, -0.5, 0);
       tent1.rotation.set(0, 150, 0);
 
       // logs
-      let campfireMesh = OBJLoader.getMesh("campfireMesh", "ressources/campfire.obj");
+      let campfireMesh = OBJLoader.getMesh("campfireMesh", "resources/campfire.obj");
       campfire = new ModelTransform(campfireMesh, campfireMat);
       campfire.scale.set(0.5, 0.5, 0.5);
       campfire.position.set(1.45, 0.08, 3);
       campfire.rotation.set(0, 90, 0);
 
       // fire
-      let fireMesh = OBJLoader.getMesh("fireMesh", "ressources/fira.obj");
+      let fireMesh = OBJLoader.getMesh("fireMesh", "resources/fira.obj");
       fire = new ModelTransform(fireMesh, fireMat);
       fire.position.set(1.15, -0.5, 1.0);
       fire.scale.set(0.08, 0.04, 0.04);
       fire.rotation.set(0.01, 0.01, 0.01);
 
       // ufo
-      let ufoMesh = OBJLoader.getMesh("ufoMesh", "ressources/ufo1.obj");
+      let ufoMesh = OBJLoader.getMesh("ufoMesh", "resources/ufo1.obj");
       ufo = new ModelTransform(ufoMesh, ufoMat);
       ufo.position.set(1,1,-1);
       ufo.scale.set(0.02,0.02,0.02);
       ufo.rotation.set(0, 0, 0);
 
       // rock
-      let rockMesh = OBJLoader.getMesh("rockMesh", "ressources/rock.obj");
+      let rockMesh = OBJLoader.getMesh("rockMesh", "resources/rock.obj");
       rock = new ModelTransform(rockMesh, rockMat);
       rock.position.set(0,-1.2,0);
       rock.scale.set(0.07,0.07,0.07);
@@ -239,7 +239,7 @@
       g_lightingData.lightDirZ = fire.position.z;
 
       music = new Howl({
-        src: ['ressources/daylight.mp3'],
+        src: ['resources/daylight.mp3'],
         html5: true,
         loop: true
       });
