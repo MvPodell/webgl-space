@@ -51,7 +51,7 @@
 <body>
   <h1 id="welcome", class="words">Welcome to our WebGL Graphics Final Project</h1>
   <h2 id="subtitle", class="words", style="font-size: 15px">Made by Max Podell and Sophia Ristuben</h2>
-  <a class="words", style="padding-bottom: 20px", href="https://github.com/MvPodell/webgl-space">GitHub</a>
+  <a id="github", class="words", style="padding-bottom: 20px", href="https://github.com/MvPodell/webgl-space">GitHub</a>
   <button type="button", id="startbutton", onclick="load()", class="space-button">Begin</button>
 
   <!-- <canvas width="500" height="500" id="webgl-canvas"></canvas> -->
@@ -327,6 +327,7 @@
       document.getElementById("startbutton").remove();
       document.getElementById("welcome").remove();
       document.getElementById("subtitle").remove();
+      document.getElementById("github").remove();
 
       // Create the canvas element and append it to the body
       var canvas = document.createElement("canvas");
